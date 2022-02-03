@@ -1,3 +1,8 @@
+<?php
+  session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,12 +28,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="inicio.php">Inicio</a>
         </li>
+        <?php if($_SESSION['usuario']['rol'] ==1) { ?>
         <li class="nav-item">
           <a class="nav-link" href="misDispositivos.php">Dispositivos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="misReportes.php">Reportes</a>
         </li>
+        <?php } else  if($_SESSION['usuario']['rol'] ==2) { ?>
         <!-- De aqui son las istas del administrador -->
         <li class="nav-item">
           <a class="nav-link" href="usuarios.php">Usuarios</a>
@@ -39,12 +46,12 @@
         <li class="nav-item" class="">
           <a class="nav-link" href="reportes.php">Reportes</a>
         </li>
-        
+        <?php } ?>
         <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Usuarios</button>
+        <button class="dropbtn"> <?php echo $_SESSION ['usuario']['nombre']; ?></button>
         <div class="dropdown-content">
           <a href="#">Editar Datos</a>
-          <a href="#">Salir</a>
+          <a href="../procesos/usuarios/login/salir.php">Salir</a>
         </div>
         </div>
       </ul>
