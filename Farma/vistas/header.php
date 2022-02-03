@@ -13,25 +13,42 @@
     <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
   <div class="container">
-    <a class="navbar-brand" href="#">Start Bootstrap</a>
+    <a class="navbar-brand" href="inicio.php">Help-Desk</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
+      
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="inicio.php">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="misDispositivos.php">Dispositivos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Services</a>
+          <a class="nav-link" href="misReportes.php">Reportes</a>
+        </li>
+        <!-- De aqui son las istas del administrador -->
+        <li class="nav-item">
+          <a class="nav-link" href="usuarios.php">Usuarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="asignacion.php">Asignacion</a>
         </li>
+        <li class="nav-item" class="">
+          <a class="nav-link" href="reportes.php">Reportes</a>
+        </li>
+        
+        <div class="dropdown" style="float:right;">
+        <button class="dropbtn">Usuarios</button>
+        <div class="dropdown-content">
+          <a href="#">Editar Datos</a>
+          <a href="#">Salir</a>
+        </div>
+        </div>
       </ul>
+      
     </div>
   </div>
 </nav>
