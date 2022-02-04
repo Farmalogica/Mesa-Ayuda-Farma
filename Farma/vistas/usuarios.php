@@ -14,14 +14,20 @@ if (isset($_SESSION['usuario']) &&
     <div class="card-body p-5">
       <h1 class="fw-light">Usuarios</h1>
       <p class="lead"> 
-        
+        <button class= "btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalAgregarUsuarios" >
+          Agregar Usuario
+        </button>
+        <hr>
+        <div id="tablaUsuariosLoad">
+
+        </div>
       </p>
       
   </div>
 </div>
 <?php  
 
-include "usuarios/modelAgregar.php"
+include "usuarios/modalAgregar.php";
 include "footer.php";
 
 } else {
