@@ -49,13 +49,18 @@
           <a class="nav-link" href="reportes.php">Reportes</a>
         </li>
         <?php } ?>
-        <div class="dropdown" style="float:right;">
-        <button class="dropbtn"> <?php echo $_SESSION ['usuario']['nombre']; ?></button>
-        <div class="dropdown-content">
-          <a href="#">Editar Datos</a>
-          <a href="../procesos/usuarios/login/salir.php">Salir</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <?php echo $_SESSION ['usuario']['nombre']; ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"></a>
+          <a class="dropdown-item" href="#">Editar</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="../procesos/usuarios/login/salir.php">Salir</a>
         </div>
-        </div>
+      </li>
+
       </ul>
       
     </div>
