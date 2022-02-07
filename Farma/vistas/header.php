@@ -11,14 +11,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
     <link  rel="stylesheet"  href="../public/css/Plantilla.css">
-    <title>Help-Desk</title>
+    <link rel="stylesheet"  href="../public/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"  href="../public/datatable/responsive.bootstrap4.min.css">
+    <title>Mesa-Ayuda</title>
 
 </head>
 <body>
     <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
   <div class="container">
-    <a class="navbar-brand" href="inicio.php">Help-Desk</a>
+    <a class="navbar-brand" href="inicio.php"><strong>SGS </strong></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,14 +30,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="inicio.php">Inicio</a>
         </li>
-        <?php if($_SESSION['usuario']['rol'] ==1) { ?>
+        <?php if($_SESSION['usuario']['rol'] == 1) { ?>
         <li class="nav-item">
           <a class="nav-link" href="misDispositivos.php">Dispositivos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="misReportes.php">Reportes</a>
         </li>
-        <?php } else  if($_SESSION['usuario']['rol'] ==2) { ?>
+        <?php } else  if($_SESSION['usuario']['rol'] == 2) { ?>
         <!-- De aqui son las istas del administrador -->
         <li class="nav-item">
           <a class="nav-link" href="usuarios.php">Usuarios</a>

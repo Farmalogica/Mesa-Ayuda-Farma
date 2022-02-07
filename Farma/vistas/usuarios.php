@@ -18,9 +18,7 @@ if (isset($_SESSION['usuario']) &&
           Agregar Usuario
         </button>
         <hr>
-        <div id="tablaUsuariosLoad">
-
-        </div>
+        <div id="tablaUsuariosLoad"></div>
       </p>
       
   </div>
@@ -28,6 +26,7 @@ if (isset($_SESSION['usuario']) &&
 <?php  
 
 include "usuarios/modalAgregar.php";
+include "usuarios/modalActualizar.php";
 include "footer.php";
 ?>
   <script src="../public/js/usuarios/usuarios.js"></script>

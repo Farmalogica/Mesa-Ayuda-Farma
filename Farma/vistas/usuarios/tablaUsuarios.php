@@ -27,21 +27,21 @@
 
 ?>
 
-<table class="table table-sm" >
+<table class="table table-sm dt-responsive nowrap" style="width:100%" id="tablaUsuariosDataTable">
  <thead>
-<th>Nompre</th>
-<th>Primer Apellido</th>
-<th>Segundo Apellido</th>
-<th>Edad</th>
-<th>Genero</th>
-<th>Telefono</th>
-<th>Correo</th>
-<th>Usuario</th>
-<th>Reset Password</th>
-<th>Cambiar Rol</th>
-<th>Ubicacion</th>
-<th>Editar</th>
-<th>Eliminar</th>
+        <th>Nompre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Edad</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Usuario</th>
+        <th>Genero</th>
+        <th>Ubicacion</th>
+        <th>Reset Password</th>
+        <th>Activar</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
  </thead>
  <tbody>
 <?php 
@@ -50,34 +50,58 @@
 ?>
 
 <tr>
-<th> <?php echo $mostrar['nombrePersona']; ?> </th>
-<th><?php echo $mostrar['paterno']; ?></th>
-<th><?php echo $mostrar['materno']; ?></th>
-<th><?php echo $mostrar['fechaNacimiento']; ?></th>
-<th><?php echo $mostrar['sexo']; ?></th>
-<th><?php echo $mostrar['telefono']; ?></th>
-<th><?php echo $mostrar['correo']; ?></th>
-<th><?php echo $mostrar['nombreUsuario']; ?></th>
-<th><?php echo $mostrar['ubicacion']; ?></th>
-<th>
-    <button class="btn btn-success btn-sm" >
-        Cambiar Contraseña
-    </button>
-</th>
-<th><button class="btn btn-primary btn-sm" >
-        Cambiar Rol
-    </button></th>
-
-<th><button class="btn btn-warning btn-sm" >
-        Editar
-    </button></th>
-<th><button class="btn btn-danger btn-sm" >
-        Eliminar
-    </button></th>
+        <td> <?php echo $mostrar['nombrePersona']; ?> </td>
+        <td><?php echo $mostrar['paterno']; ?></td>
+        <td><?php echo $mostrar['materno']; ?></td>
+        <td><?php echo $mostrar['fechaNacimiento']; ?></td>
+        <td><?php echo $mostrar['telefono']; ?></td>
+        <td><?php echo $mostrar['correo']; ?></td>
+        <td><?php echo $mostrar['nombreUsuario']; ?></td>
+        <td><?php echo $mostrar['sexo']; ?></td>
+        <td><?php echo $mostrar['ubicacion']; ?></td>
+        <td>
+            <button class="btn btn-success btn-sm" >
+                Cambiar Contraseña
+            </button>
+        </td>
+        
+        <td>
+            <?php 
+            if($mostrar['estatus'] == 1){?>
+            <button class= "btn btn-info btn-sm">
+                Activar
+            </button>
+            <?php } else{?> 
+            <button class= "btn btn-info btn-sm">
+                Inactivo
+            </button>
+            <?php } ?>    
+        </td>
+        <td>
+            <button class="btn btn-warning btn-sm" 
+            data-toggle="modal" 
+            data-target="#modalActualizarUsuarios"
+            onclick="obtenerDatosUsuario(<?php echo $mostrar['idUsuario']?>)">
+                Editar
+            </button>
+        </td>
+        <td>
+            <button class="btn btn-danger btn-sm" >
+                Eliminar
+            </button>
+        </td>
+        
 </tr>
+
 
 <?php } ?>
 
 </tbody>
 
 </table>
+
+<script>
+    $(document).ready(function(){
+        $('#tablaUsuariosDataTable').DataTable();
+    });
+</script>

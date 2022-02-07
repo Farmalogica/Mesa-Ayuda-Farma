@@ -12,9 +12,11 @@ if (isset($_SESSION['usuario']) &&
 <div class="container">
   <div class="card border-0 shadow my-5">
     <div class="card-body p-5">
-      <h1 class="fw-light">Asignacion</h1>
-      <p class="lead"> Content on the page will</p>
-      
+      <h1 class="fw-light">Asignacion De Equipos</h1>
+      <button >Asignar equipo</button>
+      <hr>
+      <div id="tablaAsignacionesLoad"></div>
+   </div>
   </div>
 </div>
 <?php  include "footer.php";
