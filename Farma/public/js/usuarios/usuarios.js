@@ -14,6 +14,7 @@ function agregarNuevoUsuario(){
             respuesta = respuesta.trim();
             if(respuesta == 1){
                 $('#tablaUsuariosLoad').load("usuarios/tablaUsuarios.php")
+                $('#modalAgregarUsuarios').modal('hide');
                 Swal.fire(":D","Agregado Con exito!","success");
                 $('#frmAgregarUsuario')[0].reset();
             }else{
@@ -58,7 +59,8 @@ function actualizarUsuario(){
         success:function(respuesta){
             respuesta = respuesta.trim();
             if(respuesta == 1){
-                $('#tablaUsuariosLoad').load("usuarios/tablaUsuarios.php")
+                $('#tablaUsuariosLoad').load("usuarios/tablaUsuarios.php");
+                $('#modalActualizarUsuarios').modal('hide');
                 Swal.fire(":D","Actualizado Con exito!","success");
             }else{
                 Swal.fire(":(","Error en la Actualizacion de usuario."+ respuesta,"error");
